@@ -23,5 +23,9 @@ The compile as follows:
 ## Running the Program
 Call the CLLE program, e.g. CALL GU007C. Do not call the RPG program directly.
 
+![This is an image](screenshot.png)
+
+Once inside the game, if you don't press any key, the screen will auto refresh itself and your computer opponent will move. You can control the direction of your snake using I (up), J (left), K (down), L (right) just like the good old days of computer games in the 1980s. The objective is to eat the alphabets before your opponent does. If you collide with the computer's snake, it's game over.
+
 ## Additional Notes
 This program was originally written and intended to run in IBM Client Access 5250 emulator. It may run on other emulators such as Mocha TN5250 too but I've never thoroughy tested it. Snake/400 was written for fun and demonstrated that you could still do wonders with RPG.
