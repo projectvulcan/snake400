@@ -20,6 +20,11 @@ The compile as follows:
 3. Compile GU007R using option 15. This will create the RPG module.
 4. Issue command CRTPGM PGM(GU007R) with GU007R as the module and make sure the activiation group is caller. This will create the main program.
 
+If you run into any difficulties with the source code, please verify that:
+1. The source physical file ('PF') is at least 112 in length, for example, CRTSRCPF FILE(QRPGLESRC) RCDLEN(112).
+2. The code page of the PF and your job is 37, for example, CHGJOB CCSID(37).
+3. The FTP mode of transfer was set to ASCII during upload.
+
 ## Running the Program
 Call the CLLE program, e.g. CALL GU007C. Do not call the RPG program directly.
 
