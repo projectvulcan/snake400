@@ -1,0 +1,108 @@
+     A*%%TS  SD  20220127  164929  SYAZWANH    REL-V7R4M0  5770-WDS
+     A*=========================================================================
+     A*                                                     datacrush@gmail.com
+     A* GU007D
+     A* Snake/400 - Traditional snake game on ISeries
+     A*
+     A* Version 1 Release 1 Modifications 0
+     A*  February 2003
+     A*
+     A* (C) Copyright Isaac Syaz, 2003-2013
+     A* All Rights Reserved
+     A*
+     A*=========================================================================
+     A* Modifications log
+     A* ------------------------------------------------------------------------
+     A* Trace   User        Date        Description
+     A* ------------------------------------------------------------------------
+     A*         SyazwanH    16/02/2003  New program.
+     A* ------------------------------------------------------------------------
+     A*=========================================================================
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R D01
+     A*%%TS  SD  20220127  164929  SYAZWANH    REL-V7R4M0  5770-WDS
+     A                                      CA03(03 'Exit')
+     A                                      CA12(12 'Cancel')
+     A                                      INVITE
+     A                                  2 30'Snake/400 Version 2.00'
+     A                                      DSPATR(HI)
+     A                                  6 14'* ....+....+....+....+....+....+..-
+     A                                      ..+....+....+....+ *'
+     A                                  7 14'.'
+     A                                  8 14'.'
+     A                                  9 14'.'
+     A                                 10 14'.'
+     A                                 11 14'+'
+     A                                 12 14'.'
+     A                                 13 14'.'
+     A                                 14 14'.'
+     A                                 15 14'.'
+     A                                 16 14'+'
+     A                                 17 14'* ....+....+....+....+....+....+..-
+     A                                      ..+....+....+....+ *'
+     A                                  7 67'.'
+     A                                  8 67'.'
+     A                                  9 67'.'
+     A                                 10 67'.'
+     A                                 11 67'.'
+     A                                 12 67'.'
+     A                                 13 67'.'
+     A                                 14 67'.'
+     A                                 15 67'.'
+     A                                 16 67'.'
+     A                                 23  3'F3=Exit'
+     A                                      COLOR(BLU)
+     A            WLINE01       50A  O  7 16
+     A            WLINE02       50A  O  8 16
+     A            WLINE03       50A  O  9 16
+     A            WLINE04       50A  O 10 16
+     A            WLINE05       50A  O 11 16
+     A            WLINE06       50A  O 12 16
+     A            WLINE07       50A  O 13 16
+     A            WLINE08       50A  O 14 16
+     A            WLINE09       50A  O 15 16
+     A            WLINE10       50A  O 16 16
+     A                                  9 74'N'
+     A                                 10 74'|'
+     A                                 11 72'W-+-E'
+     A                                 12 74'|'
+     A                                 13 74'S'
+     A                                 19 70'Move:'
+     A            WINPUT         1A  I 19 76DSPATR(PC)
+     A                                      CHECK(ER)
+     A                                 18 15'Your'
+     A                                      DSPATR(HI)
+     A                                 19 15'Score'
+     A                                      DSPATR(HI)
+     A            WSCORE         8Y 0O 20 15EDTCDE(3)
+     A                                 18 39'Your'
+     A                                      DSPATR(HI)
+     A                                 19 39'Length'
+     A                                      DSPATR(HI)
+     A            WLENGTH        8Y 0O 20 39EDTCDE(3)
+     A            WSTATUS        9A  O 16  3DSPATR(HI)
+     A                                 15 70'F=10 pts'
+     A                                 16 70'C=5  pts'
+     A                                 17 70'Y=1  pts'
+     A                                 18 27'Computer'
+     A                                      DSPATR(HI)
+     A                                 19 27'Score'
+     A                                      DSPATR(HI)
+     A            WSCOR2         8Y 0O 20 27EDTCDE(3)
+     A                                 18 51'Computer'
+     A                                      DSPATR(HI)
+     A                                 19 51'Length'
+     A                                      DSPATR(HI)
+     A            WLENGT2        8Y 0O 20 51EDTCDE(3)
+     A                                  6  3'Use the'
+     A                                  7  3'following'
+     A                                  8  3'keys:'
+     A                                 10  3'I = Up'
+     A                                 11  3'J = Left'
+     A                                 12  3'L = Right'
+     A                                 13  3'K = Down'
+     A                                 22  2'__________________________________-
+     A                                      ___________________________________-
+     A                                      _________'
+     A                                 23 47'https://github.com/projectvulcan/'

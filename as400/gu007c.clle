@@ -1,0 +1,40 @@
+   /*==========================================================================================*/
+   /*                                                                      datacrush@gmail.com */
+   /* GU007C                                                                                   */
+   /* Snake/400 - Traditional snake game on ISeries                                            */
+   /*                                                                                          */
+   /* Version 1 Release 1 Modifications 0                                                      */
+   /*  February 2003                                                                           */
+   /*                                                                                          */
+   /* (C) Copyright Isaac Syaz, 2003-2013.                                                     */
+   /* All Rights Reserved                                                                      */
+   /*                                                                                          */
+   /*==========================================================================================*/
+   /* Modifications log                                                                        */
+   /* ---------------------------------------------------------------------------------------- */
+   /* Trace   User        Date        Description                                              */
+   /* ---------------------------------------------------------------------------------------- */
+   /*         SyazwanH    16/02/2003  New program.                                             */
+   /* ---------------------------------------------------------------------------------------- */
+   /*==========================================================================================*/
+
+              PGM
+
+              DCL        VAR(&DQNAM) TYPE(*CHAR) LEN(10) VALUE('GU007DQ')
+              DCL        VAR(&DQLIB) TYPE(*CHAR) LEN(10) VALUE('QTEMP')
+
+              DLTDTAQ    DTAQ(&DQLIB/&DQNAM)
+              MONMSG     MSGID(CPF2105)
+              CRTDTAQ    DTAQ(&DQLIB/&DQNAM) MAXLEN(640) +
+                           SENDERID(*YES) AUTORCL(*YES) AUT(*ALL)
+
+              OVRDSPF    FILE(GU007D) DTAQ(&DQLIB/&DQNAM) SHARE(*YES)
+              CALL       PGM(*LIBL/GU007R)
+              DLTDTAQ    DTAQ(&DQLIB/&DQNAM)
+              MONMSG     MSGID(CPF2105)
+              DLTOVR     FILE(*ALL)
+
+              RCLRSC
+
+              ENDPGM
+
